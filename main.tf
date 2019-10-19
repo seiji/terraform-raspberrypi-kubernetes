@@ -36,10 +36,11 @@ resource "null_resource" "this" {
 
     sudo dphys-swapfile swapoff \
       && sudo dphys-swapfile uninstall \
-      && sudo update-rc.d dphys-swapfile remove
+      && sudo systemctl disable dphys-swapfile
 
     sudo systemctl disable bluetooth.service
     sudo systemctl disable hciuart.service
+    sudo systemctl disable wpa_supplicant
 
     # Install Docker CE
     wget https://download.docker.com/linux/debian/dists/buster/pool/stable/armhf/containerd.io_1.2.6-3_armhf.deb \

@@ -7,6 +7,7 @@ variable "pass" {}
 variable "timezone" {}
 
 variable "pub_key" {}
+variable "hostname" {}
 
 variable "ssh_key_file" {
   default = "~/.ssh/id_rsa"

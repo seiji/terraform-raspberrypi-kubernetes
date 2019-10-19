@@ -11,6 +11,7 @@ module "master" {
   host     = "192.168.1.16"
   timezone = local.timezone
   pub_key  = var.pub_key
+  hostname = "raspi01"
 }
 
 module "node1" {
@@ -20,4 +21,15 @@ module "node1" {
   host     = "192.168.1.15"
   timezone = local.timezone
   pub_key  = var.pub_key
+  hostname = "raspi02"
+}
+
+module "node2" {
+  source   = "../"
+  user     = local.user
+  pass     = local.pass
+  host     = "192.168.1.17"
+  timezone = local.timezone
+  pub_key  = var.pub_key
+  hostname = "raspi03"
 }

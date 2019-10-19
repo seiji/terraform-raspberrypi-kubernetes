@@ -14,7 +14,7 @@ module "master" {
   hostname = "raspi01"
 }
 
-module "node1" {
+module "worker1" {
   source   = "../"
   user     = local.user
   pass     = local.pass
@@ -24,7 +24,7 @@ module "node1" {
   hostname = "raspi02"
 }
 
-module "node2" {
+module "worker2" {
   source   = "../"
   user     = local.user
   pass     = local.pass

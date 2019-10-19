@@ -16,6 +16,7 @@ resource "null_resource" "this" {
     chmod 600 ~/.ssh/authorized_keys
     echo 'pi:pi' | sudo chpasswd
     sudo sh -c 'echo -n "" > /etc/motd'
+    sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
 
     # host
     echo '127.0.1.1 ${var.hostname}' | sudo tee -a /etc/hosts

@@ -22,6 +22,8 @@ resource "null_resource" "this" {
     echo '127.0.1.1 ${var.hostname}' | sudo tee -a /etc/hosts
     sudo hostnamectl set-hostname ${var.hostname}
 
+    echo 'interface eth0\nstatic ip_address=${var.static_ip_address}\nstatic routers=${var.static_routers}\nstatic domain_name_servers=${var.static_domain_name_servers}' | sudo tee -a /etc/dhcpcd.conf
+
     # date
     sudo timedatectl set-timezone ${var.timezone}
     sudo timedatectl set-ntp true

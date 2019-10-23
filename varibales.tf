@@ -4,10 +4,15 @@ variable "host" {
 
 variable "user" {}
 variable "pass" {}
-variable "timezone" {}
 
 variable "pub_key" {}
 variable "hostname" {}
+
+variable "static_ip_address" {}
+variable "static_routers" {}
+variable "static_domain_name_servers" {}
+
+variable "timezone" {}
 
 variable "ssh_key_file" {
   default = "~/.ssh/id_rsa"

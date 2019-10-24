@@ -5,6 +5,7 @@ metadata:
 build:
   artifacts:
   - image: sample
+    context: app
 deploy:
   kubectl:
     manifests:
